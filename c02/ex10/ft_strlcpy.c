@@ -16,5 +16,5 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size) {
     }
     dest[i] = '\0';
   }
-  return len;
+  return (len);
 }

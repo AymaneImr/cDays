@@ -20,5 +20,5 @@ char *ft_strcapitalize(char *str) {
     }
     i++;
   }
-  return str;
+  return (str);
 }

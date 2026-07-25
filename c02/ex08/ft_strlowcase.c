@@ -8,5 +8,5 @@ char *ft_strlowcase(char *str) {
     }
     i++;
   }
-  return str;
+  return (str);
 }
