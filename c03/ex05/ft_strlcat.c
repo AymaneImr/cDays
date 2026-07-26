@@ -1,9 +1,9 @@
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size) {
   unsigned int i = 0;
-  int src_len = 0;
-  int dest_len = 0;
+  unsigned int src_len = 0;
+  unsigned int dest_len = 0;
 
-  while (*(dest + dest_len) != '\0') {
+  while (*(dest + dest_len) != '\0' && dest_len < size) {
     dest_len++;
   }
 
@@ -11,14 +11,15 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size) {
     src_len++;
   }
 
-  if (size > dest_len + 1) {
-
-    while (i < size - dest_len - 1 && *(src + i) != '\0') {
-      *(dest + i + dest_len) = *(src + i);
-      i++;
-    }
-
-    *(dest + i + dest_len) = '\0';
+  if (size == dest_len) {
+    return size + src_len;
   }
+
+  while (i < size - dest_len - 1 && *(src + i) != '\0') {
+    *(dest + i + dest_len) = *(src + i);
+    i++;
+  }
+
+  *(dest + i + dest_len) = '\0';
   return src_len + dest_len;
 }
