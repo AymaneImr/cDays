@@ -1,6 +1,7 @@
 #include <stdlib.h>
 int ft_ultimate_range(int **range, int min, int max) {
   int i;
+  int j;
 
   if (min >= max) {
     *range = NULL;
@@ -10,7 +11,8 @@ int ft_ultimate_range(int **range, int min, int max) {
   if (!*range)
     return -1;
   i = 0;
-  while (i < max - min) {
+  j = min;
+  while (i < max - j) {
     *(*range + i) = min;
     i++;
     min++;
